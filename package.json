@@ -1,0 +1,14 @@
+{
+  "name": "hotel-booking-app",
+  "version": "1.0.0",
+  "description": "A professional hotel booking website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.1",
+    "firebase-admin": "^11.11.1",
+    "dotenv": "^16.4.5"
+  }
+}

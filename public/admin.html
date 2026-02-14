@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Luxury Stay</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-section {
+            margin-bottom: 5rem;
+        }
+
+        .admin-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+
+        .admin-table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admin-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .admin-table tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        .config-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 500px;
+        }
+
+        .config-card p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .input-group input {
+            padding: 0.8rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">LUXURY STAY <span
+                style="font-size: 0.8rem; vertical-align: middle; background: var(--secondary-color); color: var(--primary-color); padding: 2px 8px; border-radius: 4px; margin-left: 5px;">ADMIN</span>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="admin.html" class="active">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2 class="section-title fade-in">Management Console</h2>
+
+            <div class="admin-grid" style="max-width: 1200px; margin: 0 auto;">
+                <div class="admin-section reveal">
+                    <h3>Hotel Configuration</h3>
+                    <div class="config-card">
+                        <p>Currently Available: <span id="currentRoomCount"
+                                style="font-weight: 700; color: var(--secondary-color);">50</span> Rooms</p>
+                        <div class="input-group">
+                            <label>Reset Room Count:</label>
+                            <input type="number" id="newRoomCount" value="50">
+                            <button id="updateRoomsBtn" class="btn"
+                                style="padding: 0.8rem 1.5rem; margin-top: 0;">Update</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-section reveal">
+                    <h3>Recent Bookings</h3>
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Mobile</th>
+                                    <th>Rooms</th>
+                                    <th>Days</th>
+                                    <th>Total Payment</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingsList">
+                                <!-- Dynamic Content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="admin-section reveal">
+                    <h3>Guest Messages</h3>
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Sender</th>
+                                    <th>Contact No.</th>
+                                    <th>Message Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messagesList">
+                                <!-- Dynamic Content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">LUXURY STAY</div>
+                <p>Elegant living in the heart of the city.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 joelx Orbit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
